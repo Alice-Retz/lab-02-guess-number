@@ -16,3 +16,11 @@ test('time to test a function', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
+
+test('when guess is higher than answer show "lower"', (expect) => {
+    const guess = 9;
+    const answer = 17;
+    const expected = 'lower';
+    const actual = compareNumbers(guess, answer);
+    expect.equal(actual, expected);
+})

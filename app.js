@@ -6,7 +6,7 @@
 //relevant response
 import { getRandomInt } from '../utils.js';
 
-//const resetBtn = document.getElementById('reset-button');
+const resetBtn = document.getElementById('reset-button');
 const numberInput = document.getElementById('user-guess');
 const submitBtn = document.getElementById('submit-button');
 const response = document.getElementById('response');
@@ -14,11 +14,12 @@ const attempts = document.getElementById('attempts-left');
 const randNum = getRandomInt();
 var clickCount = 0;
 console.log(randNum);
-// resetBtn.addEventListener('click', ()=>{
-//     console.log(randNum);
-//     return randNum;
-//     clickCount =0;
-// });
+
+resetBtn.addEventListener('click', ()=>{
+    clickCount = 0;
+    getRandomInt();
+    console.log(randNum);
+});
 
 
 submitBtn.addEventListener('click', ()=>{
