@@ -1,8 +1,9 @@
-// import functions and grab DOM elements
+//need input and button linked
+//Random number generator
+//Read what number attempt
+//read user input
+//if else statement
+//relevant response
 
-// initialize state
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const numberInput = document.getElementById('user-guess');
+const submitBtn = document.getElementById('submit-button');
