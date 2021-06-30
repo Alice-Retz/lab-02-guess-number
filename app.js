@@ -4,7 +4,7 @@
 //read user input
 //if else statement
 //relevant response
-import { getRandomInt } from './utils.js';
+import { getRandomInt } from '../utils.js';
 
 //const resetBtn = document.getElementById('reset-button');
 const numberInput = document.getElementById('user-guess');
@@ -26,19 +26,17 @@ submitBtn.addEventListener('click', ()=>{
     console.log(clickCount);
     if (clickCount > 2) {
         document.getElementById('submit-button').disabled = true;
-        return attempts.textContent = `You're out of guesses!`;
+        attempts.textContent = `You're out of guesses!`;
     } else {
-        return attempts.textContent = `You've guessed ${clickCount}/3 times.`;
+        attempts.textContent = `You've guessed ${clickCount}/3 times.`;
+    }
+    if (numberInput.value > randNum) {
+        response.textContent = `Lower.`;
+    } else if (numberInput.value < randNum) {
+        response.textContent = `Higher.`;
+    } else {
+        response.textContent = `You guessed it!`;
     }
 });
 
-submitBtn.addEventListener('click', ()=>{
-    if (numberInput.value > randNum) {
-        return response.textContent = `Lower.`;
-    } else if (numberInput.value < randNum) {
-        return response.textContent = `Higher.`;
-    } else {
-        return response.textContent = `You guessed it!`;
-    }
-});
 
