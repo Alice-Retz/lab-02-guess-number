@@ -7,3 +7,6 @@
 
 const numberInput = document.getElementById('user-guess');
 const submitBtn = document.getElementById('submit-button');
+const resetBtn = document.getElementById('reset-button');
+const response = document.getElementById('response');
+
