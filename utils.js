@@ -10,6 +10,7 @@ export function compareNumbers(numberInput, randNum) {
     } else if (numberInput < randNum) {
         return `Higher.`;
     } else {
+        document.getElementById('submit-button').disabled = true;
         return `You guessed it!`;
     }
 }

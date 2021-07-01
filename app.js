@@ -21,17 +21,15 @@ resetBtn.addEventListener('click', ()=>{
   
   
 submitBtn.addEventListener('click', ()=>{
-    const numberInputValue = Number(numberInput.value);
+    let numberInputValue = Number(numberInput.value);
     response.textContent = compareNumbers(numberInputValue, randNum);
     clickCount++;
     console.log(clickCount);
-    if (clickCount > 2) {
-        document.getElementById('submit-button').disabled = true;
+    attempts.textContent = `You've guessed ${clickCount}/4 times.`;
+    if ((clickCount > 3) && (numberInputValue === randNum)) {
+        submitBtn.disabled = true;
+    } else if (clickCount > 3) {
+        submitBtn.disabled = true;
         attempts.textContent = `You're out of guesses! The answer was ${randNum}`;
-        response.textContent = ``;
-    } else {
-        attempts.textContent = `You've guessed ${clickCount}/3 times.`;
     }
 });
-
-
