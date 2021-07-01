@@ -1,42 +1,36 @@
-//need input and button linked
-//Random number generator
-//Read what number attempt
-//read user input
-//if else statement
-//relevant response
-import { getRandomInt } from '../utils.js';
+import { getRandomInt } from './utils.js';
+import { compareNumbers } from './utils.js';
 
 const resetBtn = document.getElementById('reset-button');
 const numberInput = document.getElementById('user-guess');
 const submitBtn = document.getElementById('submit-button');
 const response = document.getElementById('response');
 const attempts = document.getElementById('attempts-left');
-const randNum = getRandomInt();
-var clickCount = 0;
+let randNum = getRandomInt();
+let clickCount = 0;
 console.log(randNum);
 
 resetBtn.addEventListener('click', ()=>{
     clickCount = 0;
-    getRandomInt();
+    document.getElementById('submit-button').disabled = false;
+    randNum = getRandomInt();
     console.log(randNum);
+    attempts.textContent = ``;
+    response.textContent = `Higher or Lower?`;
 });
-
-
+  
+  
 submitBtn.addEventListener('click', ()=>{
+    const numberInputValue = Number(numberInput.value);
+    response.textContent = compareNumbers(numberInputValue, randNum);
     clickCount++;
     console.log(clickCount);
     if (clickCount > 2) {
         document.getElementById('submit-button').disabled = true;
-        attempts.textContent = `You're out of guesses!`;
+        attempts.textContent = `You're out of guesses! The answer was ${randNum}`;
+        response.textContent = ``;
     } else {
         attempts.textContent = `You've guessed ${clickCount}/3 times.`;
-    }
-    if (numberInput.value > randNum) {
-        response.textContent = `Lower.`;
-    } else if (numberInput.value < randNum) {
-        response.textContent = `Higher.`;
-    } else {
-        response.textContent = `You guessed it!`;
     }
 });
 

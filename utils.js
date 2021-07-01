@@ -4,7 +4,7 @@ export function getRandomInt() {
 }
 
 export function compareNumbers(numberInput, randNum) {
-    console.log(numberInput, randNum);
+    // console.log(numberInput, randNum);
     if (numberInput > randNum) {
         return `Lower.`;
     } else if (numberInput < randNum) {
@@ -13,10 +13,3 @@ export function compareNumbers(numberInput, randNum) {
         return `You guessed it!`;
     }
 }
-
-// if (clickCount > 2) {
-//     document.getElementById('submit-button').disabled = true;
-//     attempts.textContent = `You're out of guesses!`;
-// } else {
-//     attempts.textContent = `You've guessed ${clickCount}/3 times.`;
-// }
