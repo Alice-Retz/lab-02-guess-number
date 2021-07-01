@@ -11,6 +11,6 @@ export function compareNumbers(numberInput, randNum) {
         return `Higher.`;
     } else {
         document.getElementById('submit-button').disabled = true;
-        return `You guessed it!`;
+        return `You got it! The answer was ${randNum}`;
     }
 }
