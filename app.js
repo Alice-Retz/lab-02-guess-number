@@ -17,6 +17,7 @@ resetBtn.addEventListener('click', ()=>{
     console.log(randNum);
     attempts.textContent = ``;
     response.textContent = `Higher or Lower?`;
+    numberInput.value = ``;
 });
   
   
@@ -26,7 +27,7 @@ submitBtn.addEventListener('click', ()=>{
     clickCount++;
     console.log(clickCount);
     attempts.textContent = `You've guessed ${clickCount}/4 times.`;
-    if ((clickCount > 3) && (numberInputValue === randNum)) {
+    if (numberInputValue === randNum) {
         submitBtn.disabled = true;
     } else if (clickCount > 3) {
         submitBtn.disabled = true;
