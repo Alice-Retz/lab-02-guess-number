@@ -33,10 +33,12 @@ test('when guess is lower than answer show "Higher."', (expect) => {
     expect.equal(actual, expected);
 });
 
-test('when guess is equal than answer show "You guessed it!"', (expect) => {
+test('show "you guessed it!" when user guesses correctly.', (expect) => {
     const guess = 9;
     const answer = 9;
-    const expected = 'You guessed it!';
+    // const submitBtn = document.getElementById('submit-button');
+    // submitBtn.disabled = true;
+    const expected = 'You got it! The answer was 9';
     const actual = compareNumbers(guess, answer);
     expect.equal(actual, expected);
 });

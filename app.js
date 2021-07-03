@@ -33,3 +33,4 @@ submitBtn.addEventListener('click', ()=>{
         attempts.textContent = `You're out of guesses! The answer was ${randNum}`;
     }
 });
+
